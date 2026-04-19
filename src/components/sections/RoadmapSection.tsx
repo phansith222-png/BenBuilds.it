@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const CheckIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -66,10 +66,10 @@ const containerVariants: Variants = {
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
   },
 };
 
@@ -77,7 +77,7 @@ export function RoadmapSection() {
   return (
     <section id="roadmap" className="w-full bg-gray-panel text-text-gray-main py-40 px-8 border-t border-text-gray-sub/10">
       <div className="max-w-5xl mx-auto">
-        <motion.div 
+        <motion.div
           className="mb-24"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -96,7 +96,7 @@ export function RoadmapSection() {
           {/* Vertical Line */}
           <div className="absolute left-[31px] md:left-[79px] top-4 bottom-12 w-[2px] bg-gradient-to-b from-[#1A1A1A] via-text-gray-sub/20 to-transparent" />
 
-          <motion.div 
+          <motion.div
             className="flex flex-col gap-24"
             variants={containerVariants}
             initial="hidden"
@@ -123,11 +123,11 @@ export function RoadmapSection() {
                     <p className="text-lg md:text-xl text-text-gray-sub font-light mb-8 max-w-2xl leading-relaxed">
                       {item.description}
                     </p>
-                    
+
                     {/* Skills Grid */}
                     <div className="flex flex-wrap gap-3 md:gap-4">
                       {item.skills.map((skill, sIdx) => (
-                        <span 
+                        <span
                           key={sIdx}
                           className="px-5 py-2 md:py-3 border border-[#1A1A1A]/10 rounded-full text-sm md:text-base font-medium text-[#1A1A1A] bg-white/40 shadow-sm backdrop-blur-sm hover:bg-white/80 transition-colors"
                         >
