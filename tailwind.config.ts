@@ -15,6 +15,7 @@ const config: Config = {
         "text-gray-sub": "#4A4A4A",
         "text-black-main": "#FFFFFF",
         "text-black-sub": "#A3A3A3",
+        "orange-accent": "#FD6F00",
       },
     },
   },

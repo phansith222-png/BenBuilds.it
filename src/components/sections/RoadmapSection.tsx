@@ -37,22 +37,22 @@ const roadmapData = [
     phase: "01. Foundation",
     icon: CheckIcon,
     title: "Mastered Tech Stack",
-    description: "Robust foundation in modern web development and performance optimization.",
-    skills: ["React 19", "Next.js (App Router)", "Node.js", "TypeScript", "Tailwind CSS"],
+    description: "Robust foundation in web development, from core web technologies up to modern React frameworks.",
+    skills: ["HTML", "CSS", "JavaScript", "React.js", "Next.js"],
   },
   {
     phase: "02. The Current Frontier",
     icon: CpuIcon,
-    title: "AI Agents & Advanced Tooling",
-    description: "Actively building with autonomous systems and advanced frameworks.",
-    skills: ["Antigravity", "Next.js 15+", "Agentic Workflows", "LLM Integration"],
+    title: "Currently Exploring",
+    description: "Actively building with advanced tooling, modern styling, and autonomous systems.",
+    skills: ["TypeScript", "Tailwind CSS", "Next.js 15+", "AI Agents"],
   },
   {
     phase: "03. Strategic Horizon",
     icon: TargetIcon,
     title: "Future Goals",
-    description: "Expanding the scale and impact of architectural software solutions.",
-    skills: ["Cloud Native Microservices", "Enterprise System Design", "AI-Driven UX/UI"],
+    description: "Expanding the architectural scale to include advanced backend frameworks, alternative frontends, NoSQL databases, and cross-platform mobile development.",
+    skills: ["Nest.js", "Nuxt.js", "MongoDB", "Flutter"],
   },
 ];
 
@@ -85,7 +85,7 @@ export function RoadmapSection() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter uppercase text-[#1A1A1A]">
-            Trajectory.
+            Learning Path.
           </h2>
           <p className="text-xl md:text-2xl text-text-gray-sub mt-6 max-w-3xl font-light leading-relaxed">
             A transparent log of the tools mastered, the systems currently being built, and the architectural goals for the future.
