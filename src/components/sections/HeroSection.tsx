@@ -56,8 +56,8 @@ export function HeroSection() {
                 Hire Me
               </a>
               <a
-                href="/images/Ben-Dev Resume.pdf"
-                download="Ben-Dev Resume.pdf"
+                href="/images/Phansit_Resume.pdf"
+                download="Phansit_Resume.pdf"
                 className="px-8 py-4 bg-transparent border-2 border-[#1A1A1A] text-[#1A1A1A] rounded-md font-semibold hover:bg-[#1A1A1A]/5 transition-colors"
               >
                 Download CV
