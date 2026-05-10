@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const languages = [
   { flag: "🇹🇭", name: "Thai",    dots: 5, label: "Native" },
-  { flag: "🇺🇸", name: "English", dots: 4, label: "Professional" },
+  { flag: "🇺🇸", name: "English", dots: 3, label: "Professional" },
   { flag: "🇨🇳", name: "Chinese", dots: 2, label: "Conversational" },
 ];
 
