@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI tooling (local Claude Code settings, context scratch)
+.claude/
+_context/
+design
+system

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { SplitScreen } from "@/components/layout/SplitScreen";
 import { Navbar } from "@/components/navigation/Navbar";
 import { SocialLinks } from "@/components/social/SocialLinks";
+import { DotGrid } from "@/components/effects/DotGrid";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -28,6 +29,7 @@ const itemVariants: Variants = {
 export function HeroSection() {
   return (
     <SplitScreen
+      rightBackground={<DotGrid />}
       leftContent={
         <div className="flex flex-col h-full justify-center">
           <motion.div
@@ -53,7 +55,11 @@ export function HeroSection() {
               <a href="#contact" className="px-8 py-4 bg-[#1A1A1A] text-white rounded-md font-semibold hover:bg-black transition-colors">
                 Hire Me
               </a>
-              <a href="#resume" className="px-8 py-4 bg-transparent border-2 border-[#1A1A1A] text-[#1A1A1A] rounded-md font-semibold hover:bg-[#1A1A1A]/5 transition-colors">
+              <a
+                href="/images/Ben-Dev Resume.pdf"
+                download="Ben-Dev Resume.pdf"
+                className="px-8 py-4 bg-transparent border-2 border-[#1A1A1A] text-[#1A1A1A] rounded-md font-semibold hover:bg-[#1A1A1A]/5 transition-colors"
+              >
                 Download CV
               </a>
             </motion.div>
@@ -79,12 +85,13 @@ export function HeroSection() {
           >
             <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[480px] lg:h-[480px] rounded-full bg-[#111111] border-8 border-white/5 flex items-center justify-center overflow-hidden shadow-2xl">
               <Image
-                src="/images/profile.png"
+                src="/images/DSC00622.jpg"
                 alt="Ben Phansit Portrait"
                 width={480}
                 height={480}
                 className="object-cover w-full h-full object-top"
                 priority
+                loading="eager"
               />
             </div>
           </motion.div>

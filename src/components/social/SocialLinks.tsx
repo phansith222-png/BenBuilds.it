@@ -29,9 +29,9 @@ const MailIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 // ตั้งค่าข้อมูล Link และ Icon
 const socialLinks = [
-  { icon: GithubIcon, href: "https://github.com/yourusername", label: "GitHub" },
-  { icon: LinkedinIcon, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-  { icon: MailIcon, href: "mailto:your-email@example.com", label: "Email" },
+  { icon: GithubIcon, href: "https://github.com/phansith222-png", label: "GitHub" },
+  { icon: LinkedinIcon, href: "https://www.linkedin.com/in/ben-phansit/", label: "LinkedIn" },
+  { icon: MailIcon, href: "mailto:phansit.h222@gmail.com", label: "Email" },
 ];
 
 export function SocialLinks() {

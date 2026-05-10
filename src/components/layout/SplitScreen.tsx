@@ -5,9 +5,11 @@ import { motion } from "framer-motion";
 export const SplitScreen = ({
   leftContent,
   rightContent,
+  rightBackground,
 }: {
   leftContent: React.ReactNode;
   rightContent: React.ReactNode;
+  rightBackground?: React.ReactNode;
 }) => {
   return (
     <div className="flex flex-col md:flex-row min-h-screen w-full">
@@ -28,6 +30,7 @@ export const SplitScreen = ({
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
+        {rightBackground}
         {rightContent}
       </motion.div>
     </div>

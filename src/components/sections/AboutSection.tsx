@@ -20,6 +20,7 @@ const itemVariants: Variants = {
   },
 };
 
+
 const SkillBar = ({ label, percentage }: { label: string; percentage: number }) => (
   <div className="mb-6 pr-2">
     <div className="flex justify-between mb-3">
@@ -54,10 +55,12 @@ export function AboutSection() {
         >
           <div className="relative w-[320px] h-[320px] md:w-[450px] md:h-[450px] rounded-full overflow-hidden border-[12px] border-white/30 shadow-xl">
             <Image
-              src="/images/profile.png"
+              src="/images/DSC00623.jpg"
               alt="About Ben"
               fill
-              className="object-cover object-top"
+              sizes="(max-width: 768px) 320px, 450px"
+              className="object-cover"
+              style={{ objectPosition: '50% 15%' }}
             />
           </div>
         </motion.div>
@@ -91,6 +94,7 @@ export function AboutSection() {
             <SkillBar label="UI/UX Design" percentage={75} />
             <SkillBar label="Database Management" percentage={80} />
           </motion.div>
+
 
         </motion.div>
       </div>
