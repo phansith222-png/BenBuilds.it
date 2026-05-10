@@ -40,6 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# large media files (exceeds GitHub 100MB limit — host on cloud storage instead)
+/public/videos/
+
 # AI tooling (local Claude Code settings, context scratch)
 .claude/
 _context/
