@@ -46,15 +46,16 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         </motion.div>
 
         <motion.div {...fadeUp(0.2)} className="mb-16">
-          {project.videoPath ? (
-            <video
-              src={project.videoPath}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full rounded-2xl"
-            />
+          {project.youtubeId ? (
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden">
+              <iframe
+                src={`https://www.youtube.com/embed/${project.youtubeId}?autoplay=1&mute=1&loop=1&playlist=${project.youtubeId}&controls=1`}
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+                title={`${project.title} demo`}
+              />
+            </div>
           ) : (
             <div className="w-full aspect-video bg-white/5 border border-white/10 rounded-2xl flex flex-col items-center justify-center gap-3">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-white/20">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useCallback } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,31 +15,10 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
   const [isHovered, setIsHovered] = useState(false);
-  const [videoReady, setVideoReady] = useState(false);
-
-  const startTime = project.videoStartTime ?? 0;
-
-  const handleMouseEnter = useCallback(() => {
-    setIsHovered(true);
-    const v = videoRef.current;
-    if (v) {
-      v.currentTime = startTime;
-      v.play().catch(() => {});
-    }
-  }, [startTime]);
-
-  const handleMouseLeave = useCallback(() => {
-    setIsHovered(false);
-    const v = videoRef.current;
-    if (v) {
-      v.pause();
-      v.currentTime = startTime;
-    }
-  }, [startTime]);
 
   return (
+    <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
     <MotionLink
       href={`/projects/${project.slug}`}
       className="group block cursor-pointer"
@@ -48,8 +27,6 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: GOLDEN, delay: index * 0.1 }}
       whileHover="hover"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
     >
       {/* Media Container */}
       <div className="relative aspect-video overflow-hidden bg-[#111111] rounded-[2rem] border border-white/5 mb-8 shadow-2xl">
@@ -58,44 +35,31 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           variants={{ hover: { scale: 1.05 } }}
           transition={{ duration: 0.8, ease: GOLDEN }}
         >
-          {/* Cover image — fades out on hover */}
-          <motion.div
-            className="absolute inset-0"
-            animate={{ opacity: isHovered && videoReady ? 0 : 1 }}
-            transition={{ duration: 0.6, ease: GOLDEN }}
-          >
-            <Image
-              src={project.coverImage}
-              alt={project.title}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-              priority={index === 0}
-              loading={index === 0 ? "eager" : "lazy"}
-            />
-          </motion.div>
-
-          {/* Video — fades in once ready and hovered */}
-          {project.videoPath && (
-            <motion.div
-              className="absolute inset-0"
-              animate={{ opacity: isHovered && videoReady ? 1 : 0 }}
-              transition={{ duration: 0.6, ease: GOLDEN }}
-            >
-              <video
-                ref={videoRef}
-                src={project.videoPath}
-                muted
-                loop
-                playsInline
-                preload="none"
-                className="w-full h-full object-cover"
-                aria-hidden="true"
-                onCanPlay={() => setVideoReady(true)}
-              />
-            </motion.div>
-          )}
+          <Image
+            src={project.coverImage}
+            alt={project.title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority={index === 0}
+            loading={index === 0 ? "eager" : "lazy"}
+          />
         </motion.div>
+
+        {project.youtubeId && (
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center"
+            animate={{ opacity: isHovered ? 1 : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-black/60 backdrop-blur-sm border border-white/20">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+              <span className="text-white text-xs font-semibold tracking-widest uppercase">Watch Demo</span>
+            </div>
+          </motion.div>
+        )}
       </div>
 
       {/* Text Content */}
@@ -130,5 +94,19 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
       </div>
     </MotionLink>
+
+      {project.liveUrl && (
+        <div className="mt-6">
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full border border-[#FD6F00]/40 text-[#FD6F00] text-xs font-semibold hover:border-[#FD6F00] hover:bg-[#FD6F00]/10 transition-colors duration-200"
+          >
+            Live Demo →
+          </a>
+        </div>
+      )}
+    </div>
   );
 }

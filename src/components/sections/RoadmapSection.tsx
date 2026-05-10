@@ -11,9 +11,9 @@ interface SkillCategory {
 
 const techStackData: SkillCategory[] = [
   { label: "Languages",     skills: ["JavaScript", "TypeScript"] },
-  { label: "Frontend",      skills: ["React", "Next.js", "Tailwind CSS"] },
-  { label: "Backend",       skills: ["Node.js", "Express.js", "REST APIs"] },
-  { label: "Database",      skills: ["SQL", "Prisma", "Supabase"] },
+  { label: "Frontend",      skills: ["React", "Next.js", "Tailwind CSS", "Vite", "Framer Motion", "DaisyUI", "Zustand"] },
+  { label: "Backend",       skills: ["Node.js", "Express.js", "REST APIs", "Socket.io", "JWT", "Passport"] },
+  { label: "Database",      skills: ["MySQL", "PostgreSQL", "Prisma", "Supabase"] },
   { label: "Tools",         skills: ["Git", "Fork", "Docker", "Figma"] },
   { label: "AI & Workflow", skills: ["Gemini API", "AI Agents"] },
 ];

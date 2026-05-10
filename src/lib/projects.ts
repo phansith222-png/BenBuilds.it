@@ -12,8 +12,7 @@ export interface Project {
   tech: string[];
   githubUrl: string;
   liveUrl: string | null;
-  videoPath: string | null;
-  videoStartTime?: number;
+  youtubeId: string | null;
 }
 
 export const projects: Project[] = [
@@ -24,12 +23,12 @@ export const projects: Project[] = [
     role: "Full Stack Developer",
     category: "AI-Powered Application",
     description:
-      "A sophisticated AI Tarot reading application that simplifies complex interpretations into accessible, personalized insights.",
+      "An AI-powered tarot reading app designed around a UX research insight: users don't need more cards — they need clarity on what a reading actually means for them.",
     coverImage: "/images/BigBodenew.png",
     problem:
-      "Traditional tarot interpretations are complex, inconsistent, and often feel generic — there's no way to get a reading that reflects your actual situation.",
+      "Most tarot websites surface card definitions, but there's almost no platform that tells you what the truest interpretation is in your specific context — and crucially, whether the outcome is good or bad for you. Readers leave more confused than when they started.",
     solution:
-      "Built a full-stack app where users describe their question, a card spread is drawn, and Google's Gemini API 2.0 Flash generates a deeply personalised reading in real-time.",
+      "Applied UX research to map where users drop off in existing tarot flows, then built a full-stack app where users describe their situation, a spread is drawn, and Gemini 2.0 Flash generates a contextual, sentiment-aware reading — so you know exactly where you stand.",
     features: [
       "AI-powered readings via Gemini API 2.0 Flash",
       "Dynamic card spread generation",
@@ -37,11 +36,10 @@ export const projects: Project[] = [
       "Reading history stored in MySQL",
       "Responsive UI with Tailwind CSS",
     ],
-    tech: ["React", "MySQL", "Gemini API 2.0 Flash", "Tailwind CSS"],
+    tech: ["Node.js", "Express", "React", "Vite", "Tailwind CSS", "PostgreSQL", "Prisma", "Google Gemini"],
     githubUrl: "https://github.com/phansith222-png/BB_Frontend",
-    liveUrl: null,
-    videoPath: "/videos/BigBode.mp4",
-    videoStartTime: 5,
+    liveUrl: "https://bb-frontend-sigma.vercel.app/",
+    youtubeId: "5VSbur7Z6-E",
   },
   {
     slug: "4b1k",
@@ -50,12 +48,12 @@ export const projects: Project[] = [
     role: "Project Owner & Frontend Developer",
     category: "Community Platform",
     description:
-      "A dedicated central hub for music enthusiasts featuring comprehensive artist profiles, discographies, and identity insights.",
+      "A community platform built for artists — not just listeners — with profiles, discographies, and social features that put creators at the centre.",
     coverImage: "/images/4B1K.png",
     problem:
-      "Streaming platforms show music, not meaning — there's nowhere to explore an artist's full identity, influences, and discography in one place.",
+      "There's no concert or music platform with a real community that actually targets artists. Streaming services are built for passive listening; fans have no structured space to rally around specific artists, and artists have no dedicated hub to build their community.",
     solution:
-      "Built a community hub with artist profiles, discographies, and identity insights powered by the YouTube API, surfacing curated video content alongside artist information.",
+      "Built a platform that flips the model: artist profiles, full discographies, and YouTube-powered content sit inside a community space designed for artist-first discovery and engagement — not algorithm-first streaming.",
     features: [
       "Artist profiles with full discography",
       "YouTube API integration for curated video content",
@@ -63,9 +61,9 @@ export const projects: Project[] = [
       "Community-driven content discovery",
       "React frontend with Express.js backend",
     ],
-    tech: ["React", "Express.js", "YouTube API"],
+    tech: ["React", "Vite", "Tailwind CSS", "DaisyUI", "Zustand", "Framer Motion", "Socket.io", "Node.js", "Express", "Prisma", "MySQL", "JWT", "Passport"],
     githubUrl: "https://github.com/phansith222-png/4B1K-frontend",
     liveUrl: null,
-    videoPath: "/videos/4B1K Presentation.mp4",
+    youtubeId: "-BANRczcUe8",
   },
 ];
