@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Design kit — plain JSX, not part of the build
+    "ui_kits/**",
   ]),
 ]);
 

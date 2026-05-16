@@ -1,102 +1,103 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
-const containerVariants: Variants = {
+const GOLDEN = [0.16, 1, 0.3, 1] as const;
+
+const container = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
 };
 
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
-  },
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: GOLDEN } },
 };
 
-
-const SkillBar = ({ label, percentage }: { label: string; percentage: number }) => (
-  <div className="mb-6 pr-2">
-    <div className="flex justify-between mb-3">
-      <span className="font-semibold text-[#1A1A1A] text-lg">{label}</span>
-    </div>
-    <div className="w-full bg-[#1A1A1A]/10 rounded-full h-3 relative">
-      <motion.div
-        className="bg-[#1A1A1A] h-3 rounded-full absolute top-0 left-0"
-        initial={{ width: 0 }}
-        whileInView={{ width: `${percentage}%` }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-      >
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-6 bg-gray-panel border-4 border-[#1A1A1A] rounded-full shadow-md translate-x-1/2" />
-      </motion.div>
-    </div>
-  </div>
-);
+const META = [
+  { key: "Stack", value: "React · Next.js · Node.js · TypeScript" },
+  { key: "Training", value: "CodeCamp Thailand · Full Stack" },
+  { key: "Status", value: "Open to Full-Time Roles" },
+  { key: "Based", value: "Bangkok, Thailand" },
+];
 
 export function AboutSection() {
   return (
-    <section id="about" className="w-full bg-gray-panel text-[#1A1A1A] py-32 px-8">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-        
-        {/* Left Side: Image */}
-        <motion.div 
-          className="w-full lg:w-5/12 flex justify-center lg:justify-start"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div className="relative w-[320px] h-[320px] md:w-[450px] md:h-[450px] rounded-full overflow-hidden border-[12px] border-white/30 shadow-xl">
+    <section id="origin" className="w-full bg-ink text-text-black-main py-32 px-8 border-t border-white/5">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start mt-16">
+          {/* Portrait */}
+          <motion.div
+            className="relative aspect-[4/5] w-full max-w-sm mx-auto md:mx-0 overflow-hidden rounded-2xl"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, ease: GOLDEN }}
+          >
             <Image
-              src="/images/DSC00623.jpg"
-              alt="About Ben"
-              fill
-              sizes="(max-width: 768px) 320px, 450px"
-              className="object-cover"
-              style={{ objectPosition: '50% 15%' }}
+              src="/images/10507.jpg"
+              alt="Ben Phansit"
+              width={400}            // กำหนดความกว้างเริ่มต้น (อัตราส่วน 4)
+              height={500}           // กำหนดความสูงเริ่มต้น (อัตราส่วน 5 เพื่อให้เป็น 4:5 เหมือนเดิม)
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="w-full h-auto object-cover" // ใช้ w-full h-auto เพื่อให้รูปย่อขยายตาม responsive
+              style={{ objectPosition: "50% 15%" }}
             />
-          </div>
-        </motion.div>
-
-        {/* Right Side: Content & Skills */}
-        <motion.div 
-          className="w-full lg:w-7/12 flex flex-col"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <motion.h2 
-            variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-[#1A1A1A]"
-          >
-            About Me
-          </motion.h2>
-          
-          <motion.p 
-            variants={itemVariants}
-            className="text-lg md:text-xl text-[#4A4A4A] leading-relaxed mb-12 font-light"
-          >
-            My career didn't start in an IDE, but in the intricate world of Payroll Outsourcing. Dealing with complex compliance laws and strict enterprise workflows instilled an uncompromising demand for data precision. Transitioning to Full Stack Development was a natural evolution, allowing me to translate problem-solving rigor into architecting scalable, beautiful software.
-          </motion.p>
-
-          {/* Skill Bars */}
-          <motion.div variants={itemVariants} className="flex flex-col gap-2">
-            <SkillBar label="Frontend Development" percentage={90} />
-            <SkillBar label="Backend Architecture" percentage={85} />
-            <SkillBar label="UI/UX Design" percentage={75} />
-            <SkillBar label="Database Management" percentage={80} />
           </motion.div>
 
+          {/* Content */}
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="flex flex-col gap-8"
+          >
+            <motion.h2
+              variants={item}
+              className="text-3xl md:text-5xl font-bold leading-tight tracking-tight"
+            >
+              From <em className="not-italic font-light italic text-text-black-sub">payroll logic</em>{" "}
+              to architecting <em className="not-italic font-light italic text-text-black-sub">software</em>.
+            </motion.h2>
 
-        </motion.div>
+            <motion.p
+              variants={item}
+              className="text-base md:text-lg text-text-black-sub leading-relaxed font-light"
+            >
+              Full Stack Developer trained at CodeCamp Thailand, with hands-on experience in React, Next.js, Node.js,
+              and SQL databases across real-world projects — from full CRUD systems to REST API integration and team
+              leadership. My background in enterprise payroll operations shaped a discipline for accuracy and translating
+              complex business requirements into working software.
+            </motion.p>
+
+            <motion.blockquote
+              variants={item}
+              className="border-l-2 border-orange-accent pl-6 py-2"
+            >
+              <p className="text-lg md:text-xl italic text-text-black-sub font-light leading-relaxed">
+                &ldquo;From managing enterprise-level payroll logic to architecting scalable web applications.&rdquo;
+              </p>
+              <footer className="mt-3 text-[11px] tracking-[0.2em] uppercase text-text-black-sub/60">
+                — The precision remains the same.
+              </footer>
+            </motion.blockquote>
+
+            {/* Meta grid */}
+            <motion.dl
+              variants={item}
+              className="grid grid-cols-2 gap-x-8 gap-y-6 pt-4 border-t border-white/10"
+            >
+              {META.map(({ key, value }) => (
+                <div key={key}>
+                  <dt className="text-[10px] tracking-[0.2em] uppercase text-text-black-sub/60 mb-1">{key}</dt>
+                  <dd className="text-sm text-text-black-main font-medium">{value}</dd>
+                </div>
+              ))}
+            </motion.dl>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

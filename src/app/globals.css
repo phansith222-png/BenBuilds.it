@@ -5,4 +5,31 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #1A1A1A;
+}
+
+@keyframes portrait-drift {
+  0%   { transform: scale(1.45) translate(0%, 0%) rotate(-1deg);    filter: blur(40px) saturate(1.18) brightness(0.72); }
+  50%  { transform: scale(1.52) translate(-3%, 2%) rotate(0.8deg);  filter: blur(28px) saturate(1.05) brightness(0.86); }
+  100% { transform: scale(1.48) translate(2%, -1.5%) rotate(-0.4deg); filter: blur(34px) saturate(1.12) brightness(0.78); }
+}
+
+@keyframes portrait-breathe {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.04); }
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+@keyframes pulse-orange {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
 }

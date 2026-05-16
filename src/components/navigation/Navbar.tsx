@@ -1,50 +1,40 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 
-const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Learning Path", href: "#roadmap" },
-  { label: "Projects", href: "#projects" },
+const NAV_LINKS = [
+  { label: "Works",        href: "#works" },
+  { label: "Capabilities", href: "#capabilities" },
+  { label: "Origin",       href: "#origin" },
+  { label: "Contact",      href: "#contact" },
 ];
 
-export const Navbar = () => {
+export function Navbar() {
   return (
-    <nav className="flex justify-start md:justify-end w-full mb-12">
-      <motion.ul
-        className="flex space-x-8"
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.1 },
-          },
-        }}
-      >
-        {navItems.map((item, index) => (
-          <motion.li
-            key={index}
-            variants={{
-              hidden: { opacity: 0, y: -20 },
-              visible: { 
-                opacity: 1, 
-                y: 0, 
-                transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
-              },
-            }}
+    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 border-b border-white/5 bg-ink/80 backdrop-blur-md">
+      <div className="flex items-center gap-3">
+        <span className="text-xs font-medium tracking-[0.2em] uppercase text-text-black-main">
+          BENBUILDS.IT
+        </span>
+        <span
+          className="w-2 h-2 rounded-full bg-orange-accent"
+          style={{ animation: "pulse-orange 2.4s ease-in-out infinite" }}
+        />
+      </div>
+
+      <nav className="hidden sm:flex items-center gap-8">
+        {NAV_LINKS.map(({ label, href }) => (
+          <motion.a
+            key={label}
+            href={href}
+            className="text-[11px] font-medium tracking-[0.18em] uppercase text-text-black-sub hover:text-text-black-main transition-colors duration-200"
+            whileHover={{ y: -1 }}
+            transition={{ duration: 0.15 }}
           >
-            <Link
-              href={item.href}
-              className="text-text-black-sub hover:text-text-black-main transition-colors text-sm tracking-widest uppercase font-medium"
-            >
-              {item.label}
-            </Link>
-          </motion.li>
+            {label}
+          </motion.a>
         ))}
-      </motion.ul>
-    </nav>
+      </nav>
+    </header>
   );
-};
+}
