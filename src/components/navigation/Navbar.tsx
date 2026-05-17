@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import NavLink from "./NavLink";
 
 const NAV_LINKS = [
   { label: "Works",        href: "#works" },
@@ -24,15 +24,7 @@ export function Navbar() {
 
       <nav className="hidden sm:flex items-center gap-8">
         {NAV_LINKS.map(({ label, href }) => (
-          <motion.a
-            key={label}
-            href={href}
-            className="text-[11px] font-medium tracking-[0.18em] uppercase text-text-black-sub hover:text-text-black-main transition-colors duration-200"
-            whileHover={{ y: -1 }}
-            transition={{ duration: 0.15 }}
-          >
-            {label}
-          </motion.a>
+          <NavLink key={href} href={href} label={label} />
         ))}
       </nav>
     </header>

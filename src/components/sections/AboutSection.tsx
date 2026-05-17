@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-const GOLDEN = [0.16, 1, 0.3, 1] as const;
+import { GOLDEN } from "@/lib/motion";
 
 const container = {
   hidden: { opacity: 0 },

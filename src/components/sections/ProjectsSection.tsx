@@ -5,8 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { projects, Project } from "@/lib/projects";
 import { WorkDetail } from "@/components/projects/WorkDetail";
-
-const GOLDEN = [0.16, 1, 0.3, 1] as const;
+import { GOLDEN } from "@/lib/motion";
 
 const ArrowRight = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

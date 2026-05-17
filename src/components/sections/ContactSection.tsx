@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import { channels, Channel } from "@/lib/data";
 import { BangkokClock } from "@/components/ui/BangkokClock";
-
-const GOLDEN = [0.16, 1, 0.3, 1] as const;
+import { GOLDEN } from "@/lib/motion";
 
 const MailIcon = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

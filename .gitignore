@@ -43,13 +43,13 @@ next-env.d.ts
 # large media files (exceeds GitHub 100MB limit — host on cloud storage instead)
 /public/videos/
 
-/design
-/system
-
 # AI tooling (local Claude Code settings, context scratch)
 .claude/
 CLAUDE.md
 AGENTS.md
+design.md
+design/
+system.md
+system/
+projects.md
 _context/
-design
-system

@@ -3,8 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { BangkokClock } from "@/components/ui/BangkokClock";
-
-const GOLDEN = [0.16, 1, 0.3, 1] as const;
+import { GOLDEN } from "@/lib/motion";
 
 const container = {
   hidden: {},
