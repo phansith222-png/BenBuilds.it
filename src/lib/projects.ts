@@ -61,7 +61,7 @@ export const projects: Project[] = [
       "Developed core features using React, Node.js, and MySQL with JWT-based authentication",
       "Supported teammates through code reviews and pair programming sessions",
     ],
-    tech: ["React", "Vite", "Tailwind CSS", "DaisyUI", "Zustand", "Framer Motion", "Socket.io", "Node.js", "Express", "Prisma", "MySQL", "JWT", "Passport"],
+    tech: ["React", "Vite", "Tailwind CSS", "DaisyUI", "Zustand", "Framer Motion", "Socket.io", "Node.js", "Express", "Prisma", "PostgreSQL", "JWT", "Passport"],
     githubUrl: "https://github.com/phansith222-png/4B1K-frontend",
     liveUrl: "https://4b1k.vercel.app/",
     youtubeId: "-BANRczcUe8",

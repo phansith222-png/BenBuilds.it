@@ -15,10 +15,10 @@ const item = {
 };
 
 const META = [
-  { key: "Stack", value: "React · Next.js · Node.js · TypeScript" },
+  { key: "Stack", value: "React · Next.js · Nest.js · TypeScript" },
   { key: "Training", value: "CodeCamp Thailand · Full Stack" },
   { key: "Status", value: "Open to Full-Time Roles" },
-  { key: "Based", value: "Bangkok, Thailand" },
+  { key: "Based", value: "Ratchathewi, Bangkok" },
 ];
 
 export function AboutSection() {
@@ -36,7 +36,7 @@ export function AboutSection() {
           >
             <Image
               src="/images/10507.jpg"
-              alt="Ben Phansit"
+              alt="Phansit Hadtakijwattana"
               width={400}            // กำหนดความกว้างเริ่มต้น (อัตราส่วน 4)
               height={500}           // กำหนดความสูงเริ่มต้น (อัตราส่วน 5 เพื่อให้เป็น 4:5 เหมือนเดิม)
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -57,18 +57,17 @@ export function AboutSection() {
               variants={item}
               className="text-3xl md:text-5xl font-bold leading-tight tracking-tight"
             >
-              From <em className="not-italic font-light italic text-text-black-sub">payroll logic</em>{" "}
-              to architecting <em className="not-italic font-light italic text-text-black-sub">software</em>.
+              From <em className="not-italic font-light italic text-text-black-sub">payroll</em>{" "}
+              to architecting <em className="not-italic font-light italic text-text-black-sub">production web apps</em>
             </motion.h2>
 
             <motion.p
               variants={item}
               className="text-base md:text-lg text-text-black-sub leading-relaxed font-light"
             >
-              Full Stack Developer trained at CodeCamp Thailand, with hands-on experience in React, Next.js, Node.js,
-              and SQL databases across real-world projects — from full CRUD systems to REST API integration and team
-              leadership. My background in enterprise payroll operations shaped a discipline for accuracy and translating
-              complex business requirements into working software.
+              I am a Full-stack developer and CodeCamp Thailand graduate with hands-on experience designing REST APIs with JWT auth,
+               modeling relational data with Prisma, and integrating LLM APIs with structured output validation. My background involved 
+               translating complex financial and HR business requirements into solid system configurations.
             </motion.p>
 
             <motion.blockquote
@@ -76,10 +75,10 @@ export function AboutSection() {
               className="border-l-2 border-orange-accent pl-6 py-2"
             >
               <p className="text-lg md:text-xl italic text-text-black-sub font-light leading-relaxed">
-                &ldquo;From managing enterprise-level payroll logic to architecting scalable web applications.&rdquo;
+                &ldquo;Translating complex business requirements into system configurations taught me the discipline needed to own features end-to-end.&rdquo;
               </p>
               <footer className="mt-3 text-[11px] tracking-[0.2em] uppercase text-text-black-sub/60">
-                — The precision remains the same.
+                — working async and delivering with precision.
               </footer>
             </motion.blockquote>
 

@@ -6,6 +6,8 @@ import {
   SiFramer, SiDaisyui, SiNodedotjs, SiExpress, SiSocketdotio, SiJsonwebtokens,
   SiPassport, SiMysql, SiPostgresql, SiPrisma, SiSupabase, SiGit, SiDocker,
   SiFigma, SiGooglegemini,
+  SiMongodb,
+  SiNestjs,
 } from "react-icons/si";
 import { Globe, GitFork, Layers, Cpu } from "lucide-react";
 import { TechCategory } from "@/lib/data";
@@ -15,6 +17,7 @@ const SKILL_ICONS: Record<string, React.ReactNode> = {
   "TypeScript":    <SiTypescript size={22} color="#3178C6" />,
   "React":         <SiReact size={22} color="#61DAFB" />,
   "Next.js":       <SiNextdotjs size={22} color="#FFFFFF" />,
+  "Nest.js":        <SiNestjs size={22} color="#E0234E" />,
   "Tailwind CSS":  <SiTailwindcss size={22} color="#06B6D4" />,
   "Vite":          <SiVite size={22} color="#646CFF" />,
   "Framer Motion": <SiFramer size={22} color="#BB4FFF" />,
@@ -28,6 +31,7 @@ const SKILL_ICONS: Record<string, React.ReactNode> = {
   "Passport":      <SiPassport size={22} color="#34E27A" />,
   "MySQL":         <SiMysql size={22} color="#4479A1" />,
   "PostgreSQL":    <SiPostgresql size={22} color="#4169E1" />,
+  "MongoDB":       <SiMongodb size={22} color="#47A248" />,
   "Prisma":        <SiPrisma size={22} color="#5A67D8" />,
   "Supabase":      <SiSupabase size={22} color="#3ECF8E" />,
   "Git":           <SiGit size={22} color="#F05032" />,

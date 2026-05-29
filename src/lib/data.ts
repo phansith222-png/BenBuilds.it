@@ -48,9 +48,9 @@ export const languages: Language[] = [
 
 export const techStack: TechCategory[] = [
   { label: "Languages",     skills: ["JavaScript", "TypeScript"] },
-  { label: "Frontend",      skills: ["React", "Next.js", "Tailwind CSS", "Vite", "Framer Motion", "DaisyUI", "Zustand"] },
+  { label: "Frontend",      skills: ["React", "Next.js", "Nest.js","Tailwind CSS", "Vite", "Framer Motion", "DaisyUI", "Zustand"] },
   { label: "Backend",       skills: ["Node.js", "Express.js", "REST APIs", "Socket.io", "JWT", "Passport"] },
-  { label: "Database",      skills: ["MySQL", "PostgreSQL", "Prisma", "Supabase"] },
+  { label: "Database",      skills: ["MySQL", "PostgreSQL","MongoDB", "Prisma", "Supabase"] },
   { label: "Tools",         skills: ["Git", "Fork", "Docker", "Figma"] },
   { label: "AI & Workflow", skills: ["Gemini API", "AI Agents"] },
 ];
@@ -62,7 +62,7 @@ export const learningPath: Phase[] = [
     status: "mastered",
     title: "Foundation",
     description: "Production-ready web fundamentals — applied in real projects at CodeCamp Thailand covering full CRUD systems, responsive UI, and version-controlled team workflows.",
-    skills: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Tailwind CSS", "Git", "Figma", "TypeScript", "Next.js 15+", "Node.js", "Express.js", "SQL", "Prisma", "Supabase", "Gemini API", "AI Agents"],
+    skills: [ "Docker","Next.js", "JavaScript", "React", "Next.js", "Tailwind CSS", "Git", "Figma", "TypeScript", "Next.js 15+", "Node.js", "Express.js", "SQL", "Prisma", "Supabase", "Gemini API", "AI Agents"],
   },
   {
     index: "02",
@@ -70,7 +70,7 @@ export const learningPath: Phase[] = [
     status: "building",
     title: "Current Frontier",
     description: "Currently deepening: containerised deployments with Docker, NoSQL databases with MongoDB, and enterprise-grade backend architecture with Nest.js.",
-    skills: ["Docker", "MongoDB", "Nest.js"],
+    skills: [ "MongoDB", "Nest.js"],
   },
   {
     index: "03",
@@ -78,7 +78,7 @@ export const learningPath: Phase[] = [
     status: "next",
     title: "Strategic Horizon",
     description: "Next phase: frontend framework expansion with Vue.js, cross-platform mobile with Flutter, and CI/CD pipelines for production-scale deployment.",
-    skills: ["Vue.js", "Flutter", "CI/CD"],
+    skills: ["Vue.js", "Flutter", "CI/CD","Angular"],
   },
 ];
 
