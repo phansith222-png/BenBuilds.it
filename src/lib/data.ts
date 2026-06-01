@@ -70,7 +70,7 @@ export const learningPath: Phase[] = [
     status: "building",
     title: "Current Frontier",
     description: "Currently deepening: containerised deployments with Docker, NoSQL databases with MongoDB, and enterprise-grade backend architecture with Nest.js.",
-    skills: [ "MongoDB", "Nest.js"],
+    skills: [ "MongoDB", "Nest.js","Vue.js"],
   },
   {
     index: "03",
@@ -78,7 +78,7 @@ export const learningPath: Phase[] = [
     status: "next",
     title: "Strategic Horizon",
     description: "Next phase: frontend framework expansion with Vue.js, cross-platform mobile with Flutter, and CI/CD pipelines for production-scale deployment.",
-    skills: ["Vue.js", "Flutter", "CI/CD","Angular"],
+    skills: ["Nuxt.js", "Flutter", "CI/CD","Angular","C#","AWS"],
   },
 ];
 
