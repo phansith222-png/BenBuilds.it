@@ -48,7 +48,7 @@ export const languages: Language[] = [
 
 export const techStack: TechCategory[] = [
   { label: "Languages",     skills: ["JavaScript", "TypeScript"] },
-  { label: "Frontend",      skills: ["React", "Next.js", "Tailwind CSS", "Vite", "Framer Motion", "DaisyUI", "Zustand"] },
+  { label: "Frontend",      skills: ["React","Vue.js", "Next.js", "Tailwind CSS", "Vite", "Framer Motion", "DaisyUI", "Zustand"] },
   { label: "Backend",       skills: ["Node.js","Nest.js", "Express.js", "REST APIs", "Socket.io", "JWT", "Passport"] },
   { label: "Database",      skills: ["MySQL", "PostgreSQL","MongoDB", "Prisma", "Supabase"] },
   { label: "Tools",         skills: ["Git", "Fork", "Docker", "Figma"] },
