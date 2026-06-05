@@ -105,7 +105,7 @@ export function HeroSection() {
               View Work <span aria-hidden>▶</span>
             </motion.a>
             <motion.a
-              href="/images/Phansit-Had_Resume%20(cc22).pdf"
+              href="/images/Phansit_Hadtak_Resume.pdf"
               download="Phansit_Hadtakijwattana_Resume.pdf"
               className="px-7 py-3 border border-white/20 text-text-black-sub text-sm font-semibold rounded-full hover:border-white/50 hover:text-text-black-main transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
